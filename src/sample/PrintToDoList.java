@@ -1,14 +1,13 @@
 package sample;
 
-import java.util.ArrayList;
+import java.util.Map;
 
 public class PrintToDoList
 {
-    public void PrintList (ArrayList<String> listToPrint)
+    public void PrintList (Map<Integer,String> listToPrint)
     {
-        for (int i = 0; i < listToPrint.size(); i++)
-        {
-            System.out.println(i + 1 + ": " + listToPrint.get(i));
-        }
+        listToPrint.entrySet().forEach(entry ->{
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        });
     }
 }

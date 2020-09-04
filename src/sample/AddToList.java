@@ -5,18 +5,20 @@ import java.util.Map;
 
 public class AddToList
 {
-    private int primaryKey = 0;
-    public ArrayList<String> AddItemToList(String itemToAdd, Map<Integer,String> userList)
+
+    public int AddItemToList(String itemToAdd, Map<Integer,String> userList, int itemKey)
     {
         ArrayList<String> toDoWordList = new ArrayList<>();
-        userList.put(primaryKey,itemToAdd);
+        userList.put(itemKey,itemToAdd);
 
+        /*
         userList.entrySet().forEach(entry ->{
             toDoWordList.add(entry.getValue());
         });
+         */
 
-        primaryKey++;
-        return toDoWordList;
+        itemKey++;
+        return itemKey;
     }
 
 }

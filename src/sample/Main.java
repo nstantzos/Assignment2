@@ -37,15 +37,14 @@ public class Main extends Application
 
         // if no, then say goodbye and exit program
 
-
+        /*
         String test = "bobdole";
         String test1 = "robdole";
         String test2 = "cobdole";
         printedList.addAll(manageUserList.AddItemToList(test));
         printedList.addAll(manageUserList.AddItemToList(test1));
         printedList.addAll(manageUserList.AddItemToList(test2));
-
-        manageUserList.PrintList(printedList);
+         */
 
         launch(args);
     }
