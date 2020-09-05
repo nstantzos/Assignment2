@@ -11,12 +11,6 @@ public class AddToList
         ArrayList<String> toDoWordList = new ArrayList<>();
         userList.put(itemKey,itemToAdd);
 
-        /*
-        userList.entrySet().forEach(entry ->{
-            toDoWordList.add(entry.getValue());
-        });
-         */
-
         itemKey++;
         return itemKey;
     }

@@ -59,28 +59,37 @@ public class Facade
         }
         else if(userInput.toUpperCase().equals("R"))
         {
-            System.out.println("Which item would you like to remove? Enter the number associated with the item");
-            String userItemToRemove = "";
-            // Try catch statement to check for error in user input
-            try
+            if (userList.size() < 1)
             {
-                // Collect user input, assign to string
-                userItemToRemove = inputScanner.nextLine();
-                int removalKey = Integer.parseInt(userItemToRemove);
-                RemoveItemFromList(removalKey, userList);
+                System.out.println("Error: Cannot remove item. There are no items in the list.");
             }
-            catch (Exception e)
+            else
             {
-                System.out.println("Error. Invalid entry. Please enter a valid integer");
+                System.out.println("Which item would you like to remove? Enter the number associated with the item");
+                String userItemToRemove = "";
+                // Try catch statement to check for error in user input
+                try
+                {
+                    // Collect user input, assign to string
+                    userItemToRemove = inputScanner.nextLine();
+                    int removalKey = Integer.parseInt(userItemToRemove);
+                    RemoveItemFromList(removalKey, userList);
+                }
+                catch (Exception e)
+                {
+                    System.out.println("Error. Invalid entry. Please enter a valid integer");
+                }
+                // get user input, then decide what to do
             }
-            // get user input, then decide what to do
+
         }
         else if(userInput.toUpperCase().equals("E"))
         {
             System.out.println("Exiting program.");
             return;
         }
-        System.out.println("This happens after E is entered");
+
+        // Recursive call to continue gathering user input
         ParseUserInput(userList,itemKey);
     }
 
@@ -111,24 +120,4 @@ public class Facade
         PrintToDoList printList = new PrintToDoList();
         printList.PrintList(listToPrint);
     }
-
-
-    /*
-    private static ToDoList uniqueInstance = null;
-
-    private ToDoList()
-    {
-
-    }
-
-    public static ToDoList getInstance()
-    {
-        if(uniqueInstance == null)
-        {
-            uniqueInstance = new ToDoList();
-        }
-        return uniqueInstance;
-    }
-    */
-
 }
