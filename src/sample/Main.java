@@ -18,60 +18,50 @@ public class Main extends Application
 
     public static Map<Integer,String> toDoList = new HashMap<>();
 
+    /**
+     * Launches the window containing the list view graphic
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
-        */
+        // Set the title of the primary stage
         primaryStage.setTitle("To-Do List. Better get on it!");
 
+        // Create a listview object
         ListView listView = new ListView();
 
+        // Populate the listview object with the to-do list's items
         toDoList.entrySet().forEach(entry ->
         {
             listView.getItems().add(entry.getValue());
         });
 
-        /*
-        listView.getItems().add("Item 1");
-        listView.getItems().add("Item 2");
-        listView.getItems().add("Item 3");
-        */
-
-        //HBox hbox = new HBox(listView);
+        // Create a vertical box for symmetry
         VBox vbox = new VBox(listView);
 
+        // Define scene default dimensions
         Scene scene = new Scene(vbox, 300, 420);
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
 
 
+    /**
+     * Main method to execute code
+     * @param args
+     */
     public static void main(String[] args)
     {
+        // Start new to-do list and initialize objects used to store and manage the list
         System.out.println("Starting a new to-do list.");
 
-        ToDoList List = new ToDoList();
+        // Pass the <Integer,String> map into the Facade object for construction
+        // Control passes to this object, where user input is handled
         Facade manageUserList = new Facade(toDoList);
-        ArrayList<String> printedList = new ArrayList<>();
 
-
-        // if no, then say goodbye and exit program
-
-        /*
-        String test = "bobdole";
-        String test1 = "robdole";
-        String test2 = "cobdole";
-        printedList.addAll(manageUserList.AddItemToList(test));
-        printedList.addAll(manageUserList.AddItemToList(test1));
-        printedList.addAll(manageUserList.AddItemToList(test2));
-         */
-
+        // Launch the primary stage
         launch(args);
     }
 }
