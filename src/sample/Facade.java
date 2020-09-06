@@ -34,7 +34,7 @@ public class Facade
 
         // Prompt the user for input
         System.out.println("What would you like to do? Enter A to add an item, R to remove an item, P to " +
-                "print the list to the console window, or E to exit and show a list graphic .");
+                "print the list to the console window, or E to exit and show a list graphic.");
 
         // Collect user input, assign to string
         userInput = inputScanner.nextLine();
@@ -105,7 +105,12 @@ public class Facade
             System.out.println("Exiting program, displaying list graphic.");
             return;
         }
-
+        // If the user does not enter one of the above keys
+        else
+        {
+            System.out.println("Error: Invalid input . Please enter A to add an item, R to remove an item, P to " +
+                    "print the list to the console window, or E to exit and show a list graphic.");
+        }
         // Recursive call to continue gathering user input
         ParseUserInput(userList,itemKey);
     }

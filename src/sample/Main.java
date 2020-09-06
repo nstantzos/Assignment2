@@ -1,3 +1,13 @@
+/*
+Program written by Nick Stantzos, 9-6-2020
+This program will allow the user to create a to-do list, add items to the list, remove items from the list, and print
+the list to the console window. As a bonus, this list will also be printed to a listview object in the primary stage
+when the user exits the program. The program is structured as having a Main.java class that quickly passes control to
+a facade, which then directs control to three different objects, depending on the user's input. The console will
+continuously prompt the user for input until the exit key is specified. An Integer, String map is passed to each object
+to retain memory of the to-do list.
+*/
+
 package sample;
 
 import javafx.application.Application;
