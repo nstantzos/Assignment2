@@ -74,5 +74,6 @@ public class Main extends Application
         // Launch the primary stage
         launch(args);
         System.out.println("A job well done!");
+        System.out.println("This is the Worktop branch.");
     }
 }
